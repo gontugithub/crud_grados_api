@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> CRUD </title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <style type="text/css">
+        .wrapper{
+            width: 650px;
+            margin: 0 auto;
+        }
+        .page-header h2{
+            margin-top: 0;
+        }
+        table tr td:last-child a{
+            margin-right: 15px;
+        }
+    </style>
+
+</head>
+<body>
+	<div class="wrapper">
+	<div class="container-fluid">
+
+		<div class="row">
+		    <div class="col-md-12">					
+
+		        <div class="page-header clearfix">
+		        <div class="pull-left">
+		            <h2>Grados</h2>
+		        </div>
+				<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#create-item">
+					  Agregar nuevo grado 
+				</button>
+		        </div>
+		    </div>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+			    <tr>
+					<th>tipo de grado</th>
+					<th>limite de alumnos</th>
+					<th>nombre de grado</th>
+					<th width="200px">Action</th>
+			    </tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<!--<ul id="pagination" class="pagination-sm"></ul>-->
+
+	    <!-- Create Item Modal -->
+		<div class="modal fade" id="create-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Create Item</h4>
+		      </div>
+		      <div class="modal-body">
+	      		<form data-toggle="validator" action="#" method="POST">
+	      			<div class="form-group">
+						<label class="control-label" for="title">Tipo de grado:</label>
+						<input type="text" name="gradotype" class="form-control" data-error="Incluir tipo de grado" required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="title">Limite de alumnos:</label>
+						<input type="text" name="limitealumnos" class="form-control" data-error="Incluir limite de alumnos" required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="title">Nombre de grado</label>
+						<input type="text" name="nombregrado" class="form-control" data-error="Incluir nombre de grado" required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn crud-submit btn-success">Submit</button>
+					</div>
+		      	</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- Edit Item Modal -->
+		<div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
+		      </div>
+		      <div class="modal-body">
+	      		<form data-toggle="validator" action="#" method="POST">
+	      			<input type="hidden" name="id" class="edit-id">
+	      			<div class="form-group">
+						<label class="control-label" for="title">Tipo de grado:</label>
+						<input type="text" name="gradotype" class="form-control" data-error="Incluir tipo grado." required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="title">limite de alumnos:</label>
+						<input type=text name="limitealumnos" class="form-control" data-error="incluir limite alumnos." required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="title">nombre de grado:</label>
+						<input type="text" name="nombregrado" class="form-control" data-error="incluir nombre grado." required />
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success crud-submit-edit">Submit</button>
+					</div>
+	      		</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<!--	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.3.1/jquery.twbsPagination.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	
+	<script type="text/javascript">
+   // 	 var url = "http://localhost/ajax-crud/";
+    </script>
+    <script src="item-ajax.js"></script>
+</body>
+</html>
